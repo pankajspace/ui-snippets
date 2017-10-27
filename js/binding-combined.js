@@ -13,8 +13,6 @@ var obj2 = {
 	a: 2,
 	foo : foo
 }
-console.log(obj1.a)	//1
-
 obj1.foo.call(obj2)	//2
 obj2.foo.call(obj1, 15)	//1
 
