@@ -27,3 +27,25 @@ function addOne(b){
 var result = bind2(addOne, obj);
 var final = result(2);
 console.log(final);
+//Advanced closure
+
+
+//Animate closure
+function animateIt(elementId) {
+    var elem = document.getElementById(elementId); 
+    var tick = 0;
+    var timer = setInterval(function(){
+       if (tick < 100) {
+        elem.style.left = elem.style.top = tick + "px";
+        tick++;
+       } else {
+        clearInterval(timer);
+        console.log(tick == 100,"Tick accessed via a closure.");
+        console.log(elem,"Element also accessed via a closure.");
+        console.log(timer, "Timer reference also obtained via a closure." );
+       }
+    }, 10);
+ }
+ animateIt('box');
+//Animate closure
+ 
