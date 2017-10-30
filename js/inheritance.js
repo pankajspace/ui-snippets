@@ -16,9 +16,8 @@ function Rectangle() {
 }
 // subclass extends superclass
 Rectangle.prototype = Object.create(Shape.prototype);
-// console.log(Rectangle.prototype.constructor);
+console.log(Rectangle);
 Rectangle.prototype.constructor = Rectangle;
-// console.log(Rectangle.prototype.constructor);
 var rect = new Rectangle();
 console.log('Is rect an instance of Rectangle?', rect instanceof Rectangle); // true
 console.log('Is rect an instance of Shape?', rect instanceof Shape); // true
@@ -49,20 +48,3 @@ var c = new Child();
 c.getsBored();
 c.breathes();
 // Old way
-
-//If you wish to inherit from multiple objects, then mixins are a possibility.
-function MyClass() {
-    SuperClass.call(this);
-    OtherSuperClass.call(this);
-}
-
-// inherit one class
-MyClass.prototype = Object.create(SuperClass.prototype);
-// mixin another
-Object.assign(MyClass.prototype, OtherSuperClass.prototype);
-// re-assign constructor
-MyClass.prototype.constructor = MyClass;
-
-MyClass.prototype.myMethod = function () {
-    // do a thing
-};
