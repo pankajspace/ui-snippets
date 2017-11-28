@@ -1,23 +1,19 @@
-function fib(){
+function fib(n) {
 	var start = 0;
 	var next = 1;
+	var final = start + next;
+	var fibArr = [];
 
-	var fibArr = new Array();
 	fibArr.push(start);
 	fibArr.push(next);
- 	// console.log(start);
- 	// console.log(next);
-	while (true){
-		var final = start + next;
+	while (n >= 0) {		
 		start = next;
-		next = final; 		
- 		if(final > 610){ 	
- 			console.log(fibArr);	
- 			return;
- 		}
-        console.log(final);
- 		fibArr.push(final);
-	}  
+		next = final;
+		final = start + next;
+		fibArr.push(final);
+		console.log(fibArr);
+		n--;
+	}
 }
 
-fib()
+fib(5)
