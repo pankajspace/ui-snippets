@@ -9,11 +9,13 @@ function fib(n) {
 	while (n >= 0) {		
 		start = next;
 		next = final;
-		final = start + next;
+		final = start + next;		
+		n--;
 		fibArr.push(final);
 		console.log(fibArr);
-		n--;
 	}
+	console.log(final);
+	return final;
 }
 
 fib(5)
