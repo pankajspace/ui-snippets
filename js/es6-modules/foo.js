@@ -5,4 +5,4 @@ function awesome(who) {
 	console.log(hello(hungry).toUpperCase());
 }
 
-export awesome;
+export default awesome;
