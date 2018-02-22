@@ -12,10 +12,10 @@ function fib(n) {
 		final = start + next;		
 		n--;
 		fibArr.push(final);
-		console.log(fibArr);
+		// console.log(fibArr);
 	}
-	console.log(final);
-	return final;
+	console.log(fibArr);
+	return fibArr;
 }
 
 fib(5)
