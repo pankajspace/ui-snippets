@@ -1,4 +1,4 @@
-"use strict"
+"use strict"  //comment - uncomment this line to see different behaviour
 
 //explicit binding takes precedance over implicit binding
 function foo(a) {

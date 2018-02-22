@@ -39,19 +39,23 @@
 
 // //explicit binding
 // function foo4(){
-// 	console.log(window.a);
+//     // "use strict";
+// 	console.log(a);
 // 	console.log(this.a);
 // }
 // var obj = {
-// 	a: 1,
+// 	a: "obj",
 // 	foo4: foo4
 // }
-// var a = 2;
-// foo4.call(obj);	
-// foo4.apply(obj);	
+// var a = "window";
+
+// obj.foo4() // "window" "obj"	
+// foo4.call(obj);	// "window" "obj"
+// foo4.apply(obj); // "window" "obj"	
+
 // var fun = foo4.bind(obj);	
-// fun();
-// foo4();	//2 without strict mode   //TypeError with strict mode
+// fun(); // "window" "obj"	
+// foo4();	//"window" without strict mode   //TypeError with strict mode
 // //explicit binding
 
 
