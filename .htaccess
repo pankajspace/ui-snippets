@@ -1,0 +1,2 @@
+RewriteEngine On
+ErrorDocument 404 /accelerator/syn-ai/index.html
