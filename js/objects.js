@@ -1,15 +1,14 @@
-"use strict"
+"use strict";
+
+var c = "key";
 
 //object properties
 var obj = {
-	"a" : 1,
-	a : 2,
-	b : 3,
-	"b" : 4
-}
+  a: 1,
+  a: 2,
+  key: 5,
+};
 
 console.log(obj.a);
 console.log(obj["a"]);
-
-console.log(obj.b);
-console.log(obj["b"]);
+console.log(obj[c]);

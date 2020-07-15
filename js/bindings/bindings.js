@@ -1,47 +1,47 @@
-"use strict"  //comment - uncomment this line to see different behaviour
+"use strict"; //comment - uncomment this line to see different behaviour for each example
 
-// // default binding 
+// default binding
+// console.log(this);
 // var a = 1;
 // (function () {
-// 	var a = 2;
-// 	function foo1() {
-// 		var a = 3;
-// 		console.log(a);
-// 		console.log(window.a);
-// 		console.log(this.a);
-// 	}
-// 	foo1();
+//   console.log(this);
+//   var a = 2;
+//   (function () {
+//     console.log(this);
+//     var a = 3;
+//     console.log(window.a);
+//     console.log(a);
+//     console.log(this.a);
+//   })();
 // })();
-// //default binding
+//default binding
 
-
-// //new binding 
+//new binding
 // function foo2(a) {
-// 	this.a = a;
+//   this.a = a;
 // }
 // var b = new foo2(3);
 // console.log(b.a);
-// //new binding
+//new binding
 
-
-// //implicit binding
-// function foo3(){
-// 	console.log(a, this.a);	
+//implicit binding
+// function foo3() {
+//   console.log(a, this.a);
 // }
 // var obj = {
-// 	a: 1,
-// 	foo2: foo3
-// }
+//   a: 1,
+//   foo2: foo3,
+// };
 // var a = 2;
 // obj.foo2();
-// //implicit binding
+// foo3();
+//implicit binding
 
-
-// //explicit binding
+//explicit binding
 // function foo4(){
-//     // "use strict";
 // 	console.log(a);
 // 	console.log(this.a);
+// 	// console.log(this.a);
 // }
 // var obj = {
 // 	a: "obj",
@@ -49,17 +49,16 @@
 // }
 // var a = "window";
 
-// obj.foo4() // "window" "obj"	
+// obj.foo4() // "window" "obj"
 // foo4.call(obj);	// "window" "obj"
-// foo4.apply(obj); // "window" "obj"	
+// foo4.apply(obj); // "window" "obj"
 
-// var fun = foo4.bind(obj);	
-// fun(); // "window" "obj"	
+// var fun = foo4.bind(obj);
+// fun(); // "window" "obj"
 // foo4();	//"window" without strict mode   //TypeError with strict mode
-// //explicit binding
+//explicit binding
 
-
-// //hard binding
+//hard binding
 // function foo5(){
 // 	console.log(this.a);
 // }
@@ -72,10 +71,9 @@
 // var a = 2;
 // bar5();	//always 1
 // foo5();	//2 without strict mode   //TypeError with strict mode
-// //hard binding
+//hard binding
 
-
-// //implicit lost
+//implicit lost
 // function foo6() {
 // 	console.log(this.a);
 // }
@@ -90,10 +88,11 @@
 // 	var a = 10;
 // 	fn();
 // }
-// doFoo(foo6);		//5 without strict mode   //TypeError with strict mode
-// doFoo(obj.foo);	//5 without strict mode   //TypeError with strict mode
-// doFoo(obj.foo6.bind(obj));	//2 with or without strict mode
+// doFoo(foo6);	//5 without strict mode   //TypeError with strict mode
+// doFoo(obj.foo6); //5 without strict mode   //TypeError with strict mode
+// doFoo(obj.foo6.bind(obj)); //2 with or without strict mode
 // setTimeout(foo6, 1000);	//5 with or without strict mode
 // setTimeout(obj.foo6, 1000);	//5 with or without strict mode
-// setTimeout(obj.foo6.bind(obj), 100);	//2 with or without strict mode
-// //implicit lost
+// setTimeout(obj.foo6.bind(obj), 100); //2 with or without strict mode
+//implicit lost
+

@@ -4,7 +4,7 @@ var inputs = document.querySelectorAll("input");
 var objArray = [];
 
 //adding event listeners to all inputs and associating objData for storing data related to that input.
-inputs.forEach(function(input) {
+inputs.forEach(function (input) {
   input.value = input.getAttribute("data-value");
   var objData = {
     dataValue: input.getAttribute("data-value"),
@@ -15,9 +15,9 @@ inputs.forEach(function(input) {
     get dataValue() {
       return this.dataValue;
     },
-    currentDataValue: null
+    currentDataValue: null,
   };
-  input.addEventListener("keyup", function(event) {
+  input.addEventListener("keyup", function (event) {
     objData.dataValue = event.target.value;
     input.nextElementSibling.innerHTML = objData.currentDataValue;
     console.log(objData, input.next);
@@ -27,8 +27,8 @@ inputs.forEach(function(input) {
 
 //setting data for each input randomly.
 var button = document.querySelector("button");
-button.addEventListener("click", function(event) {
-  objArray.forEach(function(obj) {
+button.addEventListener("click", function (event) {
+  objArray.forEach(function (obj) {
     console.log(obj);
     var data = Math.floor(Math.random() * 10000);
     obj.data.dataValue = data;

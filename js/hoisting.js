@@ -1,23 +1,16 @@
-"use strict"
+"use strict";
 
-console.log(function1);
 function1();
-
-function function1(){
-	console.log("function1");	
+function function1() {
+  console.log("function1");
 }
 
-console.log(function1);
-function1();
-
-var function1 = function function1Name(){
-	console.log("function1 more");
+try {
+  function2();
+} catch (error) {
+  console.log(error);
 }
-
-console.log(function1);
-function1();
-
-var function1 = "string";
-console.log(function1);
-
-function1();
+var function2 = function () {
+  console.log("function2");
+};
+function2();

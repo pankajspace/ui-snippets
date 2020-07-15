@@ -1,33 +1,31 @@
 var mySingleton = (function () {
+  var instance;
 
-    var instance;
-
-    function init() {
-        function privateMethod(params) {
-            console.log("privateMethod");
-        }
-        var privateVariable = "privateVariable"
-        var privateRandomNumber = Math.random();
-        return {
-            publicMethod: function (params) {
-                console.log("publicMethod");
-            },
-            publicProperty: "publicProperty",
-            getRandomNumber: function (params) {
-                return privateRandomNumber;
-            }
-        }
+  function init() {
+    function privateMethod(params) {
+      console.log("privateMethod");
     }
-
+    var privateVariable = "privateVariable";
+    var privateRandomNumber = Math.random();
     return {
-        getInstance: function (params) {
-            if (!instance) {
-                instance = init();
-            }
-            return instance;
-        }
-    }
+      publicMethod: function (params) {
+        console.log("publicMethod");
+      },
+      publicProperty: "publicProperty",
+      getRandomNumber: function (params) {
+        return privateRandomNumber;
+      },
+    };
+  }
 
+  return {
+    getInstance: function (params) {
+      if (!instance) {
+        instance = init();
+      }
+      return instance;
+    },
+  };
 })();
 
 var single1 = mySingleton.getInstance();
